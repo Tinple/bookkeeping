@@ -1,0 +1,26 @@
+#!/usr/bin/env node
+var Storage = require('../lib/storage');
+var path = require('path');
+var EventEmitter = require('events').EventEmitter;
+var program = require('commander');
+var Bookkeeping = require('../lib/bookkeeping');
+
+var dbPath = process.env.bookkeeping_db_path 
+  ? process.env.bookkeeping_db_path
+  : path.join(process.env.HOME, '.bookkeeping_db.json');
+
+var bookkeeping = new Bookkeeping(new Storage(dbPath));
+
+var addItem = bookkeeping.add,
+    removeItem = bookkeeping.remove,
+    clearItems = bookkeeping.clear,
+    listItems = bookkeeping.list;
+
+program
+  .version('0.0.0')
+  .option('-a, --add <desc> <check> [time]', 'Add a item', addItem)
+  .option('-r, --remove <n>', 'Remove a item', removeItem)
+  .option('-c, --clear', 'Clear all items', clearItems)
+  .option('-l, --list [timestart]..[timeend]', 'List all items', listItems)
+  .parse(process.argv);
+
