@@ -4,6 +4,7 @@ var path = require('path');
 var EventEmitter = require('events').EventEmitter;
 var program = require('commander');
 var Bookkeeping = require('../lib/bookkeeping');
+var pkg = require('../package.json');
 
 var dbPath = process.env.bookkeeping_db_path 
   ? process.env.bookkeeping_db_path
@@ -17,10 +18,10 @@ var addItem = bookkeeping.add,
     listItems = bookkeeping.list;
 
 program
-  .version('0.0.0')
-  .option('-a, --add <desc> <check> [time]', 'Add a item', addItem)
-  .option('-r, --remove <n>', 'Remove a item', removeItem)
+  .version(pkg.version)
+  .option('-a, --add <desc>...<check>', 'Add a item', addItem)
+  .option('-r, --remove <id>', 'Remove a item', removeItem)
   .option('-c, --clear', 'Clear all items', clearItems)
-  .option('-l, --list [timestart]..[timeend]', 'List all items', listItems)
+  .option('-l, --list [format]', 'List all items', listItems)
   .parse(process.argv);
 

@@ -11,14 +11,15 @@
     "url": "https://github.com/Tinple/bookkeeping"
   },
   "keywords": [
-    "[\"bookkeeping\"",
-    "\"money\"",
-    "\"daily\"]"
+    "bookkeeping",
+    "money",
+    "check"
   ],
   "dependencies": {
     "is-judge": "0.0.1",
     "cli-color": "0.3.2",
-    "commander": "2.3.0"
+    "commander": "2.3.0",
+    "moment": "2.8.1"
     },
   "author": "tinple",
   "license": "MIT",
