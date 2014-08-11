@@ -22,6 +22,6 @@ program
   .option('-a, --add <desc>...<check>', 'Add a item', addItem)
   .option('-r, --remove <id>', 'Remove a item', removeItem)
   .option('-c, --clear', 'Clear all items', clearItems)
-  .option('-l, --list [format]', 'List all items', listItems)
+  .option('-l, --list <format>', 'List all items', listItems)
   .parse(process.argv);
 
