@@ -54,6 +54,11 @@ bookkeeping items.
 
 ![](http://ttpphot.qiniudn.com/3070A10C-D89F-4B1F-88F0-7C009D0AED3B.png)
 
+### TODO
+
+- Add custom time support
+- Add backup for storage
+
 ### Contributing
 - Fork this repo
 - Clone your repo
