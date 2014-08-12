@@ -15,6 +15,9 @@
     "money",
     "check"
   ],
+  "bin": {
+    "bookkeeping": "./bin/bookkeeping"
+  },
   "dependencies": {
     "is-judge": "0.0.1",
     "cli-color": "0.3.2",
