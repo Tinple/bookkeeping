@@ -6,6 +6,9 @@ var program = require('commander');
 var Bookkeeping = require('../lib/bookkeeping');
 var pkg = require('../package.json');
 
+/**
+ * path to store
+ */
 var dbPath = process.env.bookkeeping_db_path 
   ? process.env.bookkeeping_db_path
   : path.join(process.env.HOME, '.bookkeeping_db.json');
@@ -24,4 +27,3 @@ program
   .option('-c, --clear', 'Clear all items', clearItems)
   .option('-l, --list <format>', 'List all items', listItems)
   .parse(process.argv);
-
