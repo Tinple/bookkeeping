@@ -1,20 +1,58 @@
 ## bookkeeping ![npm](https://badge.fury.io/js/bookkeeping.png)
 
+## Bookkeeping
 
+A command line tool to bookkeeping everytime.
+
+![](http://ttpphot.qiniudn.com/639994AA-ABFF-433A-B21B-09C738713004.png)
 
 ### Installation
 ````
-$ [sudo] npm install bookkeeping
+$ [sudo] npm install bookkeeping -g
 ````
 
+### Usage
 
-### Example
-````javascript
-var bookkeeping = require('bookkeeping');
-````
+```
+  Usage: bookkeeping [options]
 
-### API
-check this file: `index.js`
+  Options:
+
+    -h, --help                  output usage information
+    -V, --version               output the version number
+    -a, --add <desc>...<check>  Add a item
+    -r, --remove <id>           Remove a item
+    -c, --clear                 Clear all items
+    -l, --list <format>         List all items
+```
+
+When you add your bookkeeping item, you should follow the convention that your
+bookkeeping description and your check are splited by `...`.
+
+```
+$ bookkeeping -a 'buy a domain...￥65'
+```
+
+Pay attention that `$` should escape.
+
+```
+$ bookkeeping -a 'buy a domain...\$8.99'
+```
+
+You can list your check with `-l` flag, it requires a human format like `-3days` or 
+`-4days~-2days` to list your check items.
+
+```
+$ bookkeeping -l '-3days~-1days'
+```
+
+![](http://ttpphot.qiniudn.com/F4D2D8AF-27E3-4F18-9E46-4E4DC23C10C2.png)
+
+At last, you can also remove your check item with `-r` flag or `-c` flag, you should 
+appoint an item id to remove when use `-r` flag. And `-c` flag will remove all of your
+bookkeeping items.
+
+![](http://ttpphot.qiniudn.com/3070A10C-D89F-4B1F-88F0-7C009D0AED3B.png)
 
 ### Contributing
 - Fork this repo
