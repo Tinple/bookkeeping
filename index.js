@@ -1,1 +1,1 @@
-module.exports = require('./lib/bookkeeping');
+module.exports = require('./bin/bookkeeping');
